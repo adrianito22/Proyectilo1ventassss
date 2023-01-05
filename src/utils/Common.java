@@ -19,7 +19,8 @@ public class Common {
         try {
 //            //C:\Users\CAPSULE\Documents\ClaveAdnminFirebase
 
-            refreshToken = new FileInputStream("C:\\Users\\CAPSULE\\Documents\\ClaveAdnminFirebase\\fir-qsercom-firebase-adminsdk-kn9fn-1102a84659.json");
+            refreshToken = new FileInputStream("C:\\Users\\adrix\\IdeaProjects\\keyFirebaseAdminSDK\\fir-qsercom-firebase-adminsdk-kn9fn-46feaf5b69.json");
+
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(refreshToken))
                     .setDatabaseUrl("https://fir-qsercom-default-rtdb.firebaseio.com/")

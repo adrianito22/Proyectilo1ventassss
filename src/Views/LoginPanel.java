@@ -9,6 +9,9 @@ package Views;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
+import com.google.firebase.database.*;
+import com.google.firebase.internal.NonNull;
+import models.User;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -270,31 +273,161 @@ public class LoginPanel extends javax.swing.JFrame {
             var photoUrl = userRecord.getPhotoUrl();
             var uid = userRecord.getUid();
 
-            var password = "holamundo222"; //STORE PASSWORD IN DATABSE
+            //var password = "pas aqui; //STORE PASSWORD IN DATABSE
 
+            /*
             System.out.println(email);
             System.out.println(phone);
             System.out.println(photoUrl);
             System.out.println(uid);
+            */
 
-            if (password.equals(password_field.getText())) {
-                JOptionPane.showMessageDialog(null, "Hello " + email);
-            } else {
-                JOptionPane.showMessageDialog(null, "Contrasena incorrecta");
+
+
+            if(recoverUserData(uid)){
+
+
+                System.out.println("se ejecuto este if ");
+
+                /**chekeamos la contrasena y si es correcta vamos al panel de amdinistracion*/
+                checkIfUserExistAndGoPanel(String.valueOf(password_field.getPassword()),email_field.getText());
+
+
+            }else{
+
+
+                System.out.println("se ejecuto este else ");
+
             }
+
+
+
+
 
         } catch (FirebaseAuthException ex) {
             JOptionPane.showMessageDialog(null, "Credenciales no validas");
         }
+
+
+
+
     }
 
-    private void recoverUserData(String uid) {
+
+
+    private void checkIfUserExistAndGoPanel(String passwordUser,String email) {
+
+
+      //  Private lateinit var database:DatabaseReference
+//??.
+                DatabaseReference database  =FirebaseDatabase.getInstance().getReference().child("UsersAdmins");
+       // myRef=database.getReference("message")
+
+
+            //  Database midata=FirebaseDatabase.getInstance().getReference().child("")
+
+
+     //   DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("UsersAdmins");
+        Query query = database.orderByChild("email").equalTo(email);
+
+        System.out.println("buscamos el mail "+email);
+
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                System.out.println("se ejeuto on data change");
+
+                for (DataSnapshot ds : snapshot.getChildren()) {
+
+                    System.out.println("se llamo un for");
+
+
+                    User user=ds.getValue(User.class);
+
+                    if(user!=null){
+
+
+                        System.out.println("es difrente de nulo user");
+
+                        //chekeamos si el correo exuet
+
+                     if(user.getPasswordUser().equals(passwordUser)){ //si la contrasena es correcta
+
+                         System.out.println("bien vamos ");
+
+
+
+                         ///vAMOS AL LOGIN PANEL...
+
+                         createChangePanelAdminPanel();
+
+                           //  JOptionPane.showMessageDialog(null, "Hello "+mail );
+
+
+                     }else{
+                         System.out.println("contrasena incorrecta");
+
+                         JOptionPane.showMessageDialog(password_field, "Contrasena incorrecta");
+
+
+                     }
+
+                      //  break;
+
+
+
+
+                    }else{
+
+                        System.out.println("correo no registrado ");
+
+                        JOptionPane.showMessageDialog(password_field, "Correo no REGISTRADO");
+
+                    }
+
+
+                }
+
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                System.out.println("tenemos un error y es  "+error.getMessage());
+
+
+            }
+        } );
+
+
+
+
+
+
+    }
+
+
+
+    private boolean recoverUserData(String uid) {
         try {
             UserRecord userRecord = FirebaseAuth.getInstance().getUser(uid);
             System.out.println("Successfully fetched user data: " + userRecord.getUid());
+            return true;
+
         } catch (FirebaseAuthException ex) {
             Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+
+            return false;
+
         }
+
     }
 
 
@@ -333,8 +466,8 @@ public class LoginPanel extends javax.swing.JFrame {
       // jPanel1.add(newPanel.jPanelCenter, BorderLayout.SOUTH);
 
 
-        setSize(200,200);
-         setBackground(new java.awt.Color(41, 7, 65));
+       setSize(800,420);
+      //   setBackground(new java.awt.Color(41, 7, 65));
 
         contentPane.removeAll();
      //   RegisterPanel newPanel=new RegisterPanel();
@@ -348,5 +481,31 @@ public class LoginPanel extends javax.swing.JFrame {
 
 
     }
+
+
+
+    public void createChangePanelAdminPanel() {
+        AdminPanel newPanel=new AdminPanel();
+
+        // jPanel1.add(newPanel.jPanelCenter, BorderLayout.SOUTH);
+
+
+       // setSize(800,420);
+        //   setBackground(new java.awt.Color(41, 7, 65));
+
+        contentPane.removeAll();
+        //   RegisterPanel newPanel=new RegisterPanel();
+        // newPanel.jPanelCenter.setSize(100,100);
+
+        contentPane.add(newPanel.adminPanel);
+        System.out.println("new panel created");//for debugging purposes
+        validate();
+        setVisible(true);
+
+
+
+    }
+
+
 
 }

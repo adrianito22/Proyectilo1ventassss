@@ -10,11 +10,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
 import com.google.firebase.auth.UserRecord.CreateRequest;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import models.User;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static utils.Common.generateUUID;
 
 /**
  *
@@ -31,7 +37,7 @@ JPanel panel;
       //  setLayout(new GridLayout());
 
 
-        jPanelCenter. setBackground(new java.awt.Color(229, 10, 10));
+       // jPanelCenter. setBackground(new java.awt.Color(229, 10, 10));
 
            System.out.println("hey se llamo metodo");
         //jPanelCenter.setBackground();
@@ -115,26 +121,99 @@ return  MIpanel;
     }//GEN-LAST:event_email_fieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        System.out.println("SE PULSO REGISTRARSE ");
+
+
+        if(!checkIfEspaciosIsLLenos()){
+            System.out.println("es return  ");
+
+            return;
+        }
+
+
+
         try {
             CreateRequest request = new CreateRequest()
                     .setEmail(email_field.getText())
                     .setEmailVerified(false)
                     .setPassword(password_field.getText())
-                    .setPhoneNumber(phone_field.getText())
+                    .setPhoneNumber("+593"+phone_field.getText())
                     .setDisplayName(name_field.getText())
                     .setPhotoUrl(image_field.getText())
                     .setDisabled(false);
 
             UserRecord userRecord = FirebaseAuth.getInstance().createUser(request);
             System.out.println("Successfully created new user: " + userRecord.getUid());
+
+
+
+             /**agregamos este user a la base de datos...*/
+            addNewUserFirebaseAdmin(email_field.getText(),String.valueOf(password_field.getPassword()));
+
+
         } catch (FirebaseAuthException ex) {
             Logger.getLogger(RegisterPanel.class.getName()).log(Level.SEVERE, null, ex);
+
+
+
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void phone_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phone_fieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_phone_fieldActionPerformed
+
+
+
+
+
+    private boolean checkIfEspaciosIsLLenos(){
+        if(name_field.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(name_field, "Nombre es requerido" );
+
+            return false;
+        }
+
+        if(email_field.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(email_field, "Correo es requerido" );
+
+            return false;
+        }
+        if(password_field.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(password_field, "Contrasena  es requerida" );
+
+            return false;
+        }
+        if(phone_field.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(phone_field, "Telefono es requerido" );
+
+            return false;
+        }
+
+
+        //checkeamos que numero telefonico este correcto
+        if(phone_field.getText().trim().contains("+593")  ||  phone_field.getText().trim().contains("+")){
+            JOptionPane.showMessageDialog(phone_field, "No es necesario codigo de pais" );
+
+            return false;
+        }
+
+
+
+        if(image_field.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(image_field, "Url es requerida" );
+
+            return false;
+        }
+
+
+
+        return true;
+    }
+
+
 
     private void name_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_fieldActionPerformed
         // TODO add your handling code here:
@@ -162,6 +241,29 @@ return  MIpanel;
 
 
 
+
+    private void addNewUserFirebaseAdmin(String mail,String passWord){
+
+
+       DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("UsersAdmins");
+        String id = generateUUID();
+
+        User user = new User();
+        user.setId_user(id);
+        user.setEmail(mail);
+        user.setPasswordUser(passWord);
+
+
+        mDatabase.setValue(user, new DatabaseReference.CompletionListener() {
+           @Override
+           public void onComplete(DatabaseError de, DatabaseReference dr) {
+
+
+               // status_request_lbl.setText("Finish");
+           }
+        });
+
+    }
 
 
 
