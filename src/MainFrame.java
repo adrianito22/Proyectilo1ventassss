@@ -1,5 +1,4 @@
-import Views.LoginPanel;
-import Views.RegisterPanel;
+import Views.LoginPanelWhitFrameMain;
 import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import utils.Common;
@@ -29,7 +28,7 @@ public class MainFrame{
 
                public void run() {
 
-                  LoginPanel panel=new LoginPanel();
+                  LoginPanelWhitFrameMain panel=new LoginPanelWhitFrameMain();
                 panel.setSize(700,450);
 
                 panel.setVisible(true);

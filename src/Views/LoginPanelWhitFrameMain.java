@@ -12,6 +12,7 @@ import com.google.firebase.auth.UserRecord;
 import com.google.firebase.database.*;
 import com.google.firebase.internal.NonNull;
 import models.User;
+import utils.Variables;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,13 +22,13 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.*;
-import javax.swing.border.Border;
 
-public class LoginPanel extends javax.swing.JFrame {
+public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
     Container contentPane;
+    public JPanel jPanelCenter;
 
-    public LoginPanel() {
+    public LoginPanelWhitFrameMain() {
 
 
         super("Changing JPanel inside a JFrame");
@@ -99,63 +100,9 @@ public class LoginPanel extends javax.swing.JFrame {
         jbtnRegistrarse.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              //  JOptionPane.showMessageDialog(password_field, "sepulso register");
-
-
-             //   jPanel1.removeAll();
-              //  getContentPane().removeAll(); //emovemos el panel que tiene esta frameactualemnte
-               // setSize(500,500);
-              //  getContentPane().invalidate();
-
-
-             //   jPanel1.removeAll();
-              //  jPanel1.setSize(500,500);
 
                 createChangePanel();
 
-
-               // RegisterPanel mipanel= new RegisterPanel();
-                 //jPanel1.add(mipanel, BorderLayout.CENTER);
-
-
-
-                 // setContentPane(mipanel);
-              //  jPanel1.add(new RegisterPanel());
-               // jPanel1.updateUI();
-/*
-                mipanel.setSize(500,500);
-                mipanel.setVisible(true);
-                getContentPane().remove(jPanel1);
-                getContentPane().add(mipanel, BorderLayout.SOUTH);
-                setContentPane(mipanel);
-
-                getContentPane().revalidate();
-                getContentPane().repaint();
-*/
-               //  jPanel1.updateUI();
-
-
-              //  getContentPane().remove(jPanel1);
-               // getContentPane().add(confidenceButtons,BorderLayout.SOUTH);
-               // getContentPane().revalidate();
-              //  getContentPane().repaint();
-
-
-
-              //  RegisterPanel mipanel= new RegisterPanel();
-               // getContentPane().add(mipanel);
-               // getContentPane().revalidate();
-
-               //mipanel.setSize(500,500);
-              //  mipanel.setVisible(true);
-              //  setContentPane(mipanel);
-              //  revalidate(); // frame.pack() if you want to resize.
-              // setVisible(true);
-
-               // setContentPane().add(mipanel);
-
-               // add(mipanel);
-              //  getContentPane().add(new RegisterPanel()); //ler gramos otro panel la frame
 
 
             }
@@ -273,6 +220,8 @@ public class LoginPanel extends javax.swing.JFrame {
             var photoUrl = userRecord.getPhotoUrl();
             var uid = userRecord.getUid();
 
+            Variables.userRecordGlobal=userRecord;
+
             //var password = "pas aqui; //STORE PASSWORD IN DATABSE
 
             /*
@@ -317,17 +266,8 @@ public class LoginPanel extends javax.swing.JFrame {
 
     private void checkIfUserExistAndGoPanel(String passwordUser,String email) {
 
-
-      //  Private lateinit var database:DatabaseReference
-//??.
                 DatabaseReference database  =FirebaseDatabase.getInstance().getReference().child("UsersAdmins");
-       // myRef=database.getReference("message")
 
-
-            //  Database midata=FirebaseDatabase.getInstance().getReference().child("")
-
-
-     //   DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("UsersAdmins");
         Query query = database.orderByChild("email").equalTo(email);
 
         System.out.println("buscamos el mail "+email);
@@ -350,7 +290,7 @@ public class LoginPanel extends javax.swing.JFrame {
                     if(user!=null){
 
 
-                        System.out.println("es difrente de nulo user");
+                        System.out.println("es difrente de nulo user y pasword es "+user.getPasswordUser());
 
                         //chekeamos si el correo exuet
 
@@ -358,6 +298,7 @@ public class LoginPanel extends javax.swing.JFrame {
 
                          System.out.println("bien vamos ");
 
+                       //  JOptionPane.showMessageDialog(password_field, "Contrasena correcta");
 
 
                          ///vAMOS AL LOGIN PANEL...
@@ -422,7 +363,7 @@ public class LoginPanel extends javax.swing.JFrame {
             return true;
 
         } catch (FirebaseAuthException ex) {
-            Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginPanelWhitFrameMain.class.getName()).log(Level.SEVERE, null, ex);
 
             return false;
 
@@ -474,6 +415,29 @@ public class LoginPanel extends javax.swing.JFrame {
        // newPanel.jPanelCenter.setSize(100,100);
 
         contentPane.add(newPanel.jPanelCenter);
+        System.out.println("new panel created");//for debugging purposes
+        validate();
+        setVisible(true);
+
+
+
+    }
+
+
+    public  void createPanelAndGoAdminPanel() {
+        AdminPanel newPanel=new AdminPanel();
+
+        // jPanel1.add(newPanel.jPanelCenter, BorderLayout.SOUTH);
+
+
+        setSize(800,420);
+        //   setBackground(new java.awt.Color(41, 7, 65));
+
+        contentPane.removeAll();
+        //   RegisterPanel newPanel=new RegisterPanel();
+        // newPanel.jPanelCenter.setSize(100,100);
+
+        contentPane.add(newPanel.adminPanel);
         System.out.println("new panel created");//for debugging purposes
         validate();
         setVisible(true);

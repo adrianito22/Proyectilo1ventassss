@@ -9,4 +9,16 @@ public class AdminPanel {
     private JPanel panelMenu;
     private JPanel panelToShowData;
     private JPanel panelheader;
+    private JLabel jlabelImagenPerfil;
+    private JLabel jlabelMail;
+    private JLabel jlabelName;
+
+
+    private void addImageAndName(){
+
+
+
+    }
+
+
 }

@@ -147,9 +147,13 @@ return  MIpanel;
             System.out.println("Successfully created new user: " + userRecord.getUid());
 
 
-
              /**agregamos este user a la base de datos...*/
             addNewUserFirebaseAdmin(email_field.getText(),String.valueOf(password_field.getPassword()));
+
+
+            ///mostramos venta registrado correctamente y vamos al panel de administracion...
+
+
 
 
         } catch (FirebaseAuthException ex) {
@@ -254,10 +258,15 @@ return  MIpanel;
         user.setPasswordUser(passWord);
 
 
-        mDatabase.setValue(user, new DatabaseReference.CompletionListener() {
+        mDatabase.push().setValue(user, new DatabaseReference.CompletionListener() {
            @Override
            public void onComplete(DatabaseError de, DatabaseReference dr) {
 
+               JOptionPane.showMessageDialog(email_field, "Se registro exitosamente");
+
+               //vamos al panel
+               LoginPanelWhitFrameMain login= new LoginPanelWhitFrameMain();
+               login.createPanelAndGoAdminPanel();
 
                // status_request_lbl.setText("Finish");
            }
