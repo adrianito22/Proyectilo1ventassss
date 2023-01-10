@@ -276,12 +276,5 @@ return  MIpanel;
 
 
 
-    /*
-    private void createUIComponents() {
 
-        // TODO: place custom component creation code here...si
-    }
-    */
-
-    // End of variables declaration//GEN-END:variables
 }

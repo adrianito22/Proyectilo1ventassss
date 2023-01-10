@@ -33,54 +33,19 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
         super("Changing JPanel inside a JFrame");
         contentPane=getContentPane();
-      //  createUIComponents();
-        //estabkcemos el size de login panel
-       //0 setSize(700,800);
 
-        //pack(); //INVESTIGAR ESTEB METODO
-
-
-
-      //  btnRegistrarse.setText("register");
-      //  setBackground(new java.awt.Color(255, 255, 255));
-       // setLayout(new java.awt.BorderLayout());
-      //  jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-       // jPanel1.setLayout(null);
-
-
-//       jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 48)); // NOI18N
-
-       // jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-       // jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-       // jLabel1.setText("Loginzz");
-      ///  jPanel1.add(jLabel1);
-    //    jLabel1.setBounds(200, 30, 230, 60);
-
-       // email_field.setBackground(new java.awt.Color(255, 255, 255));
-       // email_field.setForeground(new java.awt.Color(0, 0, 0));
-       // email_field.setText("Email");
         email_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 email_fieldActionPerformed(evt);
             }
         });
-       // jPanel1.add(email_field);
-       // email_field.setBounds(130, 160, 370, 40);
 
-       // password_field.setBackground(new java.awt.Color(255, 255, 255));
-      //  password_field.setForeground(new java.awt.Color(0, 0, 0));
-      //  password_field.setText("jPasswordField1");
         password_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 password_fieldActionPerformed(evt);
             }
         });
-      //  jPanel1.add(password_field);
-       // password_field.setBounds(130, 210, 370, 40);
 
-       // jButton1.setBackground(new java.awt.Color(65, 80, 148));
-       // jButton1.setForeground(new java.awt.Color(255, 255, 255));
-       // jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
@@ -88,8 +53,6 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
             }
         });
-       // jPanel1.add(jButton1);
-       // jButton1.setBounds(220, 270, 180, 30);
 
         add(jPanel1);
 
@@ -101,6 +64,7 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
                 createChangePanel();
 
 
@@ -110,67 +74,6 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void configureViews() {
-
-    //    jPanel1 = new javax.swing.JPanel();
-      //  jLabel1 = new javax.swing.JLabel();
-      //  email_field = new javax.swing.JTextField();
-       // password_field = new javax.swing.JPasswordField();
-        //jButton1 = new javax.swing.JButton();
-
-      //  setBackground(new java.awt.Color(255, 255, 255));
-       // setLayout(new java.awt.BorderLayout());
-
-      //  jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-      //  jPanel1.setLayout(null);
-
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 48)); // NOI18N
-     //   jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-       // jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-       // jLabel1.setText("Login");
-     //   jPanel1.add(jLabel1);
-       // jLabel1.setBounds(200, 30, 230, 60);
-
-      //  email_field.setBackground(new java.awt.Color(255, 255, 255));
-      //  email_field.setForeground(new java.awt.Color(0, 0, 0));
-       // email_field.setText("Email");
-        email_field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email_fieldActionPerformed(evt);
-            }
-        });
-      //  jPanel1.add(email_field);
-      //  email_field.setBounds(130, 160, 370, 40);
-
-       // password_field.setBackground(new java.awt.Color(255, 255, 255));
-     //   password_field.setForeground(new java.awt.Color(0, 0, 0));
-     //   password_field.setText("jPasswordField1");
-        password_field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                password_fieldActionPerformed(evt);
-            }
-        });
-      //  jPanel1.add(password_field);
-      //  password_field.setBounds(130, 210, 370, 40);
-
-      //  jButton1.setBackground(new java.awt.Color(65, 80, 148));
-      //  jButton1.setForeground(new java.awt.Color(255, 255, 255));
-      //  jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-       // jPanel1.add(jButton1);
-       // jButton1.setBounds(220, 270, 180, 30);
-
-       // add(jPanel1, java.awt.BorderLayout.CENTER);
-
-
-      //  setContentPane(jPanel1);
-
-    }// </editor-fold>//GEN-END:initComponents
 
     private void password_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_fieldActionPerformed
         // TODO add your handling code here:
@@ -407,7 +310,7 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
       // jPanel1.add(newPanel.jPanelCenter, BorderLayout.SOUTH);
 
 
-       setSize(800,420);
+        setSize(800,420);
       //   setBackground(new java.awt.Color(41, 7, 65));
 
         contentPane.removeAll();
@@ -425,22 +328,29 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
 
     public  void createPanelAndGoAdminPanel() {
+
+
         AdminPanel newPanel=new AdminPanel();
 
-        // jPanel1.add(newPanel.jPanelCenter, BorderLayout.SOUTH);
+        //jPanel1.add(newPanel.jPanelCenter, BorderLayout.SOUTH);
 
 
-        setSize(800,420);
+        //newPanel
         //   setBackground(new java.awt.Color(41, 7, 65));
 
         contentPane.removeAll();
         //   RegisterPanel newPanel=new RegisterPanel();
         // newPanel.jPanelCenter.setSize(100,100);
+        resizePanel();
+
 
         contentPane.add(newPanel.adminPanel);
         System.out.println("new panel created");//for debugging purposes
+
+
         validate();
-        setVisible(true);
+
+      //  setVisible(true);
 
 
 
@@ -456,10 +366,14 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
        // setSize(800,420);
         //   setBackground(new java.awt.Color(41, 7, 65));
+       // contentPane.setSize(1000,1000);
+      //  newPanel.adminPanel.setSize(1000,1000);
 
         contentPane.removeAll();
         //   RegisterPanel newPanel=new RegisterPanel();
         // newPanel.jPanelCenter.setSize(100,100);
+
+        resizePanel();
 
         contentPane.add(newPanel.adminPanel);
         System.out.println("new panel created");//for debugging purposes
@@ -470,6 +384,35 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
     }
 
+
+
+    public  void resizePanel(){
+
+     //   setExtendedState(JFrame.MAXIMIZED_BOTH);
+       // setUndecorated(true);
+
+       // contentPane.setSize(1200,1050);
+
+
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice[] gs = ge.getScreenDevices();
+
+
+        int screenWidth=0;
+        int screenHeight=0;
+
+
+        for (int i=0; i<gs.length; i++) {
+            DisplayMode dm = gs[i].getDisplayMode();
+             screenWidth = dm.getWidth();
+             screenHeight = dm.getHeight();
+        }
+
+
+       setSize(screenWidth,screenHeight);
+
+
+    }
 
 
 }
