@@ -314,7 +314,7 @@ PanelAllUsers(){
          try{
              if(lisAllUsers.size()>0){
 
-                 updateUser(lisAllUsers.get(Integer.getInteger(jComboBoxCurrentSelected.getName())));
+                 updateUser(lisAllUsers.get(Integer.parseInt(jComboBoxCurrentSelected.getName())));
              }
          } catch (Exception ex) {
              throw new RuntimeException(ex);
@@ -345,6 +345,8 @@ PanelAllUsers(){
 
           if(jComboBoxCurrentSelected!=null){
               int tipoUser=Variables.NO_DEFINIDO;
+
+              System.out.println("el texto evluador tipo es "+jComboBoxCurrentSelected.getSelectedItem().toString());
 
               if(jComboBoxCurrentSelected.getSelectedItem().toString().equalsIgnoreCase("Evaluador de Campo")){
 
