@@ -31,6 +31,8 @@ public class ToggleSwitch extends JPanel {
         });
         setCursor(new Cursor(Cursor.HAND_CURSOR));
         setBounds(0, 0, 41, 21);
+
+
     }
     @Override
     public void paint(Graphics gr) {

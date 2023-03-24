@@ -3,6 +3,11 @@ package utils;
 import com.google.firebase.auth.UserRecord;
 
 public class Variables {
+
+    public static final int INSPECTOR_OFICINA=100;
+    public static final int INSPECTOR_CAMPO=101;
+
+    public static final int NO_DEFINIDO=102;
     public static UserRecord userRecordGlobal;
 
     public static final int INICIO=99;
