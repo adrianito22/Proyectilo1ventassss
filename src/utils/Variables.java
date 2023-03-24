@@ -5,6 +5,9 @@ import com.google.firebase.auth.UserRecord;
 public class Variables {
     public static UserRecord userRecordGlobal;
 
+    public static final int INICIO=99;
+
+
     public static final int TODOS=100;
     public static final int CONTENEDORES=101;
     public static final int  CONTENEDORES_ACOPIO=102;

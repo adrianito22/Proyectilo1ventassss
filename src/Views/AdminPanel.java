@@ -3,9 +3,8 @@ package Views;
 import utils.Variables;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -14,7 +13,7 @@ public class AdminPanel implements MouseListener {
 
     public JPanel adminPanel;
     private JPanel panelheader;
-    private JPanel jPnelMenuTodos;
+    private JPanel jPnelMenuInicio;
     private JPanel jPnelMenuContenedores;
     private JPanel jPnelMenuContenedoresAcopio;
     private JPanel jPnelMenuCamionesyCarretas;
@@ -40,7 +39,7 @@ public class AdminPanel implements MouseListener {
 
         adminPanel.setSize(1000,1200);
 
-        jPnelMenuTodos.addMouseListener(this);
+        jPnelMenuInicio.addMouseListener(this);
         jPnelMenuContenedores.addMouseListener(this);
         jPnelMenuContenedoresAcopio.addMouseListener(this);
         jPnelMenuCamionesyCarretas.addMouseListener(this);
@@ -53,11 +52,24 @@ public class AdminPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (e.getSource() == jPnelMenuTodos) {
+
+        if (e.getSource() == jPnelMenuInicio) {
+
+            System.out.println("SE PRESIONO INICIO");
+
+            //  jPnelMenuInicio.setBackground(Color.decode("#79147b"));
+
+
+            updateBackground(Variables.INICIO);
+
+        }
+
+
+        if (e.getSource() == jPnelMenuInicio) {
 
             System.out.println("SE PRESIONO TODOS HERE");
 
-          //  jPnelMenuTodos.setBackground(Color.decode("#79147b"));
+          //  jPnelMenuInicio.setBackground(Color.decode("#79147b"));
 
 
             updateBackground(Variables.TODOS);
@@ -130,9 +142,31 @@ public class AdminPanel implements MouseListener {
    private void updateBackground(int ItemSelecioando){
         switch(ItemSelecioando){
 
+
+            case Variables.INICIO:  //401441 //ESTE NORMAL
+
+                jPnelMenuInicio.setBackground(Color.decode("#79147b"));
+                jPnelMenuContenedores.setBackground(Color.decode("#401441"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
+                jPnelMenuPackingList.setBackground(Color.decode("#401441"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#401441"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#401441"));
+
+
+                createPanelHere();
+
+
+
+                //  JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+
+
+                break;
+
+
             case Variables.CONTENEDORES : //401441 //ESTE NORMAL
 
-                jPnelMenuTodos.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedores.setBackground(Color.decode("#79147b"));
                 jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
                 jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
@@ -153,7 +187,7 @@ public class AdminPanel implements MouseListener {
 
 
             case Variables.CAMIONESYCARRETAS:
-                jPnelMenuTodos.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedores.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
                 jPnelMenuCamionesyCarretas.setBackground(Color.decode("#79147b"));
@@ -165,7 +199,7 @@ public class AdminPanel implements MouseListener {
 
 
             case Variables.CONTENEDORES_ACOPIO:
-                jPnelMenuTodos.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedores.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedoresAcopio.setBackground(Color.decode("#79147b"));
                 jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
@@ -176,7 +210,7 @@ public class AdminPanel implements MouseListener {
                 break;
 
             case Variables.TODOS :
-                jPnelMenuTodos.setBackground(Color.decode("#79147b"));
+                jPnelMenuInicio.setBackground(Color.decode("#79147b"));
                 jPnelMenuContenedores.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
                 jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
@@ -186,7 +220,7 @@ public class AdminPanel implements MouseListener {
                 break;
 
             case Variables.PACKINGLIST :
-                jPnelMenuTodos.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedores.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
                 jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
@@ -196,7 +230,7 @@ public class AdminPanel implements MouseListener {
                 break;
 
             case Variables.MUESTREO_RECHZADOS :
-                jPnelMenuTodos.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedores.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
                 jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
@@ -206,7 +240,7 @@ public class AdminPanel implements MouseListener {
                 break;
 
             case Variables.CONTROL_CALIDAD :
-                jPnelMenuTodos.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedores.setBackground(Color.decode("#401441"));
                 jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
                 jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
@@ -229,31 +263,46 @@ public class AdminPanel implements MouseListener {
       double sizePanelHeigth= jpanelContent.getSize().getHeight();
 
 
-       JPanel seeReportsJpanel = new JPanel();
-       seeReportsJpanel.setBackground(Color.BLUE);
-       seeReportsJpanel.setSize((int)sizePanelWidth/2,(int)sizePanelHeigth);
+       ScrollPane scrollPanel= new ScrollPane();
+       scrollPanel.setSize((int)sizePanelWidth/2,(int)sizePanelHeigth);
+
+
+       JPanel borderLayoutPanel=new JPanel(new BorderLayout());
+       borderLayoutPanel.setBorder(new EmptyBorder(20, 10, 10, 10)); //le agregamos un border
+
+
+
+       PanelAllUsers panel = new PanelAllUsers();
+      // panel.setBackground(Color.BLUE);
+      // borderLayoutPanel.setSize((int)sizePanelWidth/2,(int)sizePanelHeigth);
+
+       borderLayoutPanel.add(panel, BorderLayout.NORTH);
+
+       scrollPanel.add(borderLayoutPanel);
+
+       scrollPanel.setBounds(10, 10, scrollPanel.getHeight(), scrollPanel.getHeight());
 
        jpanelContent.setLayout(null);
-       jpanelContent.add(seeReportsJpanel);
+       jpanelContent.add(scrollPanel);
+      // jpanelContent.add(panel); /asi estaba
 
 
 
 
-
+/*
 
        JPanel previewJpanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-       previewJpanel.setBackground(Color.CYAN);
+       previewJpanel.setBackground(Color.);
 
        previewJpanel.setSize((int)sizePanelWidth/2,(int)sizePanelHeigth);
        jpanelContent.setOpaque(true);
        jpanelContent.add(previewJpanel);
-
+*/
        jpanelContent.updateUI();
 
 
        ///  validate();
 
-       jpanelContent.updateUI();
 
    }
 
