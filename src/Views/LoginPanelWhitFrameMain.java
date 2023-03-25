@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 import javax.swing.*;
 
 public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
-
+   ImageIcon imageIcon;
     Container contentPane;
     public JPanel jPanelCenter;
 
@@ -33,6 +33,10 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
         super("Changing JPanel inside a JFrame");
         contentPane=getContentPane();
+
+        imageIcon= new ImageIcon("src/images/logo_qserconxx.png");
+          setIconImage(imageIcon.getImage());
+          setTitle("Qsercon Admin");
 
         email_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -359,7 +363,11 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
 
     public void createChangePanelAdminPanel() {
+
+        System.out.println("estamos ff ");
+
         AdminPanel newPanel=new AdminPanel();
+        System.out.println("aftter ");
 
         // jPanel1.add(newPanel.jPanelCenter, BorderLayout.SOUTH);
 
@@ -370,6 +378,8 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
       //  newPanel.adminPanel.setSize(1000,1000);
 
         contentPane.removeAll();
+        System.out.println("remove panel ");
+
         //   RegisterPanel newPanel=new RegisterPanel();
         // newPanel.jPanelCenter.setSize(100,100);
 

@@ -73,7 +73,7 @@ PanelAllUsers(){
 
        // ts.setLocation(5, 135);
        // frame.add(ts);
-
+        JLabel jLtextNumUser= new JLabel("Num user",SwingConstants.CENTER);
         JLabel jLtextName= new JLabel("Nombre",SwingConstants.CENTER);
         JLabel jLcorreo= new JLabel("Correo",SwingConstants.CENTER);
         JLabel jLuserTypetextName= new JLabel("Tipo de usuario",SwingConstants.CENTER);
@@ -81,6 +81,7 @@ PanelAllUsers(){
 
 
         /**add font to label*/
+        jLtextNumUser.setFont(font);
         jLtextName.setFont(font);
         jLcorreo.setFont(font);
         jLuserTypetextName.setFont(font);
@@ -95,23 +96,29 @@ PanelAllUsers(){
         gridBagC.gridx=0;
         gridBagC.gridy=0;
         gridBagC.gridwidth = 1;
-        add(jLtextName,gridBagC);
+        add(jLtextNumUser,gridBagC);
 
 
-        gridBagC.fill = GridBagConstraints.HORIZONTAL;
         gridBagC.gridx=1;
         gridBagC.gridy=0;
         gridBagC.gridwidth = 1;
-        add(jLcorreo,gridBagC);
+        add(jLtextName,gridBagC);
+
 
         gridBagC.fill = GridBagConstraints.HORIZONTAL;
         gridBagC.gridx=2;
         gridBagC.gridy=0;
         gridBagC.gridwidth = 1;
+        add(jLcorreo,gridBagC);
+
+        gridBagC.fill = GridBagConstraints.HORIZONTAL;
+        gridBagC.gridx=3;
+        gridBagC.gridy=0;
+        gridBagC.gridwidth = 1;
         add(jLuserTypetextName,gridBagC);
 
 
-        gridBagC.gridx=3;
+        gridBagC.gridx=4;
         gridBagC.gridy=0;
         gridBagC.fill = GridBagConstraints.HORIZONTAL;
 
@@ -131,13 +138,22 @@ PanelAllUsers(){
             gridBagC.gridy=positionYGrid;
             gridBagC.gridx=0;
             gridBagC.gridwidth = 1;
+            label=new JLabel(String.valueOf(indice+1),SwingConstants.CENTER);
+
+            add(label,gridBagC);
+            label.setFont(font2);
+
+            gridBagC.fill = GridBagConstraints.HORIZONTAL;
+            gridBagC.gridy=positionYGrid;
+            gridBagC.gridx=1;
+            gridBagC.gridwidth = 1;
             label=new JLabel(user.getNombreUsuario());
 
             add(label,gridBagC);
             label.setFont(font2);
 
 
-            gridBagC.gridx=1;
+            gridBagC.gridx=2;
             label=new JLabel(user.getMailGooglaUser());
             label.setFont(font2);
             add(label,gridBagC);
@@ -179,13 +195,13 @@ PanelAllUsers(){
 
             lisAllComboBox.add(combo1);
 
-            gridBagC.gridx=2;
+            gridBagC.gridx=3;
            // label=new JLabel(user.getTiposUSUARI());
            // label.setFont(font2);
             add(combo1,gridBagC);
 
 
-            gridBagC.gridx=3;
+            gridBagC.gridx=4;
             toggleSwitch=new ToggleSwitch();
             toggleSwitch.setName(String.valueOf(indice));
 

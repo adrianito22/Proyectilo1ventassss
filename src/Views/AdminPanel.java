@@ -48,6 +48,8 @@ public class AdminPanel implements MouseListener {
         jPnelMenuControlCalidad.addMouseListener(this);
 
 
+        createPanelHere();
+
     }
 
     @Override
@@ -57,7 +59,7 @@ public class AdminPanel implements MouseListener {
 
             System.out.println("SE PRESIONO INICIO");
 
-            //  jPnelMenuInicio.setBackground(Color.decode("#79147b"));
+            //  jPnelMenuInicio.setBackground(Color.decode("#554176"));
 
 
             updateBackground(Variables.INICIO);
@@ -69,7 +71,7 @@ public class AdminPanel implements MouseListener {
 
             System.out.println("SE PRESIONO TODOS HERE");
 
-          //  jPnelMenuInicio.setBackground(Color.decode("#79147b"));
+          //  jPnelMenuInicio.setBackground(Color.decode("#554176"));
 
 
             updateBackground(Variables.TODOS);
@@ -143,15 +145,15 @@ public class AdminPanel implements MouseListener {
         switch(ItemSelecioando){
 
 
-            case Variables.INICIO:  //401441 //ESTE NORMAL
+            case Variables.INICIO:  //240E41 //ESTE NORMAL
 
-                jPnelMenuInicio.setBackground(Color.decode("#79147b"));
-                jPnelMenuContenedores.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
-                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
-                jPnelMenuPackingList.setBackground(Color.decode("#401441"));
-                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#401441"));
-                jPnelMenuControlCalidad.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#554176"));
+                jPnelMenuContenedores.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#240E41"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#240E41"));
+                jPnelMenuPackingList.setBackground(Color.decode("#240E41"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#240E41"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#240E41"));
 
 
                 createPanelHere();
@@ -164,15 +166,15 @@ public class AdminPanel implements MouseListener {
                 break;
 
 
-            case Variables.CONTENEDORES : //401441 //ESTE NORMAL
+            case Variables.CONTENEDORES : //240E41 //ESTE NORMAL
 
-                jPnelMenuInicio.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedores.setBackground(Color.decode("#79147b"));
-                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
-                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
-                jPnelMenuPackingList.setBackground(Color.decode("#401441"));
-                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#401441"));
-                jPnelMenuControlCalidad.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedores.setBackground(Color.decode("#554176"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#240E41"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#240E41"));
+                jPnelMenuPackingList.setBackground(Color.decode("#240E41"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#240E41"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#240E41"));
 
 
 
@@ -187,66 +189,66 @@ public class AdminPanel implements MouseListener {
 
 
             case Variables.CAMIONESYCARRETAS:
-                jPnelMenuInicio.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedores.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
-                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#79147b"));
-                jPnelMenuPackingList.setBackground(Color.decode("#401441"));
-                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#401441"));
-                jPnelMenuControlCalidad.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedores.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#240E41"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#554176"));
+                jPnelMenuPackingList.setBackground(Color.decode("#240E41"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#240E41"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#240E41"));
                 break;
 
 
 
             case Variables.CONTENEDORES_ACOPIO:
-                jPnelMenuInicio.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedores.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#79147b"));
-                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
-                jPnelMenuPackingList.setBackground(Color.decode("#401441"));
-                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#401441"));
-                jPnelMenuControlCalidad.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedores.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#554176"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#240E41"));
+                jPnelMenuPackingList.setBackground(Color.decode("#240E41"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#240E41"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#240E41"));
 
                 break;
 
             case Variables.TODOS :
-                jPnelMenuInicio.setBackground(Color.decode("#79147b"));
-                jPnelMenuContenedores.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
-                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
-                jPnelMenuPackingList.setBackground(Color.decode("#401441"));
-                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#401441"));
-                jPnelMenuControlCalidad.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#554176"));
+                jPnelMenuContenedores.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#240E41"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#240E41"));
+                jPnelMenuPackingList.setBackground(Color.decode("#240E41"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#240E41"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#240E41"));
                 break;
 
             case Variables.PACKINGLIST :
-                jPnelMenuInicio.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedores.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
-                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
-                jPnelMenuPackingList.setBackground(Color.decode("#79147b"));
-                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#401441"));
-                jPnelMenuControlCalidad.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedores.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#240E41"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#240E41"));
+                jPnelMenuPackingList.setBackground(Color.decode("#554176"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#240E41"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#240E41"));
                 break;
 
             case Variables.MUESTREO_RECHZADOS :
-                jPnelMenuInicio.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedores.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
-                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
-                jPnelMenuPackingList.setBackground(Color.decode("#401441"));
-                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#79147b"));
-                jPnelMenuControlCalidad.setBackground(Color.decode("#401441"));
+                jPnelMenuInicio.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedores.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#240E41"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#240E41"));
+                jPnelMenuPackingList.setBackground(Color.decode("#240E41"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#554176"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#240E41"));
                 break;
 
             case Variables.CONTROL_CALIDAD :
-                jPnelMenuInicio.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedores.setBackground(Color.decode("#401441"));
-                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#401441"));
-                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#401441"));
-                jPnelMenuPackingList.setBackground(Color.decode("#401441"));
-                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#401441"));
-                jPnelMenuControlCalidad.setBackground(Color.decode("#79147b"));
+                jPnelMenuInicio.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedores.setBackground(Color.decode("#240E41"));
+                jPnelMenuContenedoresAcopio.setBackground(Color.decode("#240E41"));
+                jPnelMenuCamionesyCarretas.setBackground(Color.decode("#240E41"));
+                jPnelMenuPackingList.setBackground(Color.decode("#240E41"));
+                jPnelMenuMuestreoRechazados.setBackground(Color.decode("#240E41"));
+                jPnelMenuControlCalidad.setBackground(Color.decode("#554176"));
                 break;
 
 
@@ -264,7 +266,7 @@ public class AdminPanel implements MouseListener {
 
 
        ScrollPane scrollPanel= new ScrollPane();
-       scrollPanel.setSize((int)sizePanelWidth/2,(int)sizePanelHeigth);
+       scrollPanel.setSize((int)sizePanelWidth,(int)sizePanelHeigth);
 
 
        JPanel borderLayoutPanel=new JPanel(new BorderLayout());
