@@ -132,7 +132,7 @@ return  MIpanel;
             return;
         }
 
-
+          boolean secreoUser=false;
 
         try {
             CreateRequest request = new CreateRequest()
@@ -146,10 +146,9 @@ return  MIpanel;
 
             UserRecord userRecord = FirebaseAuth.getInstance().createUser(request);
             System.out.println("Successfully created new user: " + userRecord.getUid());
-
+            secreoUser=true;
 
              /**agregamos este user a la base de datos...*/
-            addNewUserFirebaseAdmin(email_field.getText(),String.valueOf(password_field.getPassword()));
 
 
             ///mostramos venta registrado correctamente y vamos al panel de administracion...
@@ -161,14 +160,16 @@ return  MIpanel;
 
             JOptionPane.showMessageDialog(null, "Error "+ex.getMessage() );
 
-
-
             Logger.getLogger(RegisterPanel.class.getName()).log(Level.SEVERE, null, ex);
 
+        }
 
 
+        if(secreoUser){
+            addNewUserFirebaseAdmin(email_field.getText(),String.valueOf(password_field.getPassword()));
 
         }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void phone_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phone_fieldActionPerformed
