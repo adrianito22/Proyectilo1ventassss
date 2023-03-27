@@ -77,6 +77,9 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
         });
     }
 
+
+
+
     @SuppressWarnings("unchecked")
 
     private void password_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_fieldActionPerformed

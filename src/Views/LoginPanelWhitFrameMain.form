@@ -41,7 +41,7 @@
         </constraints>
         <properties>
           <horizontalAlignment value="0"/>
-          <text value="holamundo22"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="1b5d5" class="javax.swing.JButton" binding="jButton1">
@@ -67,7 +67,7 @@
         </constraints>
         <properties>
           <horizontalAlignment value="0"/>
-          <text value="tiburelapps10@gmail.com"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="e2d23" class="javax.swing.JLabel">

@@ -5,8 +5,7 @@ import utils.Variables;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class AdminPanel implements MouseListener {
 
@@ -22,6 +21,7 @@ public class AdminPanel implements MouseListener {
     private JPanel jPnelMenuControlCalidad;
     private JPanel panelMenu;
     private JPanel jpanelContent;
+    private JLabel cerrarSesion;
     private JPanel panelToShowData;
 
     private JPanel copiaPanel;
@@ -49,6 +49,21 @@ public class AdminPanel implements MouseListener {
 
 
         createPanelHere();
+
+
+
+        cerrarSesion.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("Yay you clicked me");
+
+                //vamos a loging...
+
+
+
+            }
+
+        });
 
     }
 

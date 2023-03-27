@@ -17,6 +17,8 @@ import models.User;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -35,7 +37,6 @@ JPanel panel;
 
      // this panel=RegisterPanel.this;
       //  setLayout(new GridLayout());
-
 
        // jPanelCenter. setBackground(new java.awt.Color(229, 10, 10));
 
@@ -140,7 +141,7 @@ return  MIpanel;
                     .setPassword(password_field.getText())
                     .setPhoneNumber("+593"+phone_field.getText())
                     .setDisplayName(name_field.getText())
-                    .setPhotoUrl(image_field.getText())
+                    .setPhotoUrl("https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg")
                     .setDisabled(false);
 
             UserRecord userRecord = FirebaseAuth.getInstance().createUser(request);
@@ -157,6 +158,11 @@ return  MIpanel;
 
 
         } catch (FirebaseAuthException ex) {
+
+            JOptionPane.showMessageDialog(null, "Error "+ex.getMessage() );
+
+
+
             Logger.getLogger(RegisterPanel.class.getName()).log(Level.SEVERE, null, ex);
 
 
@@ -266,7 +272,13 @@ return  MIpanel;
 
                //vamos al panel
                LoginPanelWhitFrameMain login= new LoginPanelWhitFrameMain();
-               login.createPanelAndGoAdminPanel();
+               login.createChangePanelAdminPanel();
+
+                System.out.println("holquehay");
+
+
+            //   JOptionPane.showMessageDialog(frame, "Welcome to Swing!");
+
 
                // status_request_lbl.setText("Finish");
            }
@@ -275,6 +287,40 @@ return  MIpanel;
     }
 
 
+    private static void createUI(final JFrame frame){
+        JPanel panel = new JPanel();
+        LayoutManager layout = new FlowLayout();
+        panel.setLayout(layout);
 
+        JButton button = new JButton("Click Me!");
+        final JLabel label = new JLabel();
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] options = {"Yes! Please."};
+                int result = JOptionPane.showOptionDialog(
+                        frame,
+                        "Sure? You want to exit?",
+                        "Swing Tester",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null,     //no custom icon
+                        options,  //button titles
+                        options[0] //default button
+                );
+                if(result == JOptionPane.YES_OPTION){
+                    label.setText("You selected: Yes! Please");
+                }else if (result == JOptionPane.NO_OPTION){
+                    label.setText("You selected: No! Not now.");
+                }else {
+                    label.setText("None selected");
+                }
+            }
+        });
+
+        panel.add(button);
+        panel.add(label);
+        frame.getContentPane().add(panel, BorderLayout.CENTER);
+    }
 
 }
