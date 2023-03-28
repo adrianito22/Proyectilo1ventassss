@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+
 }
 
 group 'org.example'
@@ -12,8 +14,21 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    classpath 'com.github.johnrengelman:shadow:8.1.1'
+
 }
+
+
 
 test {
     useJUnitPlatform()
+
+
 }
+
+jar {
+    manifest {
+        attributes 'MainFrame': 'MainFrame'
+    }
+}
+

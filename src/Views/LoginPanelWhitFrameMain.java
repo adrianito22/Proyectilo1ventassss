@@ -34,9 +34,9 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
         super("Changing JPanel inside a JFrame");
         contentPane=getContentPane();
 
-        imageIcon= new ImageIcon("src/images/logo_qserconxx.png");
-          setIconImage(imageIcon.getImage());
-          setTitle("Qsercon Admin");
+       // imageIcon= new ImageIcon("src/images/logo_qserconxx.png");
+         // setIconImage(imageIcon.getImage());
+       //   setTitle("Qsercon Admin");
 
         email_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,11 +145,12 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
             if(recoverUserData(uid)){
 
+                createChangePanelAdminPanel();
 
-                System.out.println("se ejecuto este if ");
+              //  System.out.println("se ejecuto este if ");
 
                 /**chekeamos la contrasena y si es correcta vamos al panel de amdinistracion*/
-                checkIfUserExistAndGoPanel(String.valueOf(password_field.getPassword()),email_field.getText());
+               // checkIfUserExistAndGoPanel(String.valueOf(password_field.getPassword()),email_field.getText());
 
 
             }else{
@@ -289,8 +290,6 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField password_field;
     private JButton jbtnRegistrarse;
-
-
 
 
     /*
