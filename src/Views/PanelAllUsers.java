@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class PanelAllUsers extends JPanel implements ActionListener, MouseListener {
 GridBagConstraints gridBagC =  new GridBagConstraints();
-
+boolean esPrimeraVezIngresa=true;
 ArrayList<ToggleSwitch>lisAllTogles= new ArrayList<>();
 ArrayList<JComboBox>lisAllComboBox= new ArrayList<>();
 
@@ -22,8 +22,10 @@ ArrayList<JComboBox>lisAllComboBox= new ArrayList<>();
 
     ArrayList<UsuarioQsercon>lisAllUsers= new ArrayList<>();
 
+ Container contentPane;
 
 PanelAllUsers(){
+
 
  //   this.setBackground(Color.CYAN);
     this.setLayout(new GridBagLayout());
@@ -60,6 +62,16 @@ PanelAllUsers(){
 
 
     private void showAllUsersAndSetUOP(ArrayList<UsuarioQsercon>arrayList){
+        Component[] components = getComponents();
+
+        for (Component component : components) {
+            remove(component);
+        }
+
+        revalidate();
+        repaint();
+
+
      lisAllTogles= new ArrayList<>();
      lisAllComboBox= new ArrayList<>();
 
@@ -105,13 +117,11 @@ PanelAllUsers(){
         add(jLtextName,gridBagC);
 
 
-        gridBagC.fill = GridBagConstraints.HORIZONTAL;
         gridBagC.gridx=2;
         gridBagC.gridy=0;
         gridBagC.gridwidth = 1;
         add(jLcorreo,gridBagC);
 
-        gridBagC.fill = GridBagConstraints.HORIZONTAL;
         gridBagC.gridx=3;
         gridBagC.gridy=0;
         gridBagC.gridwidth = 1;
@@ -120,8 +130,6 @@ PanelAllUsers(){
 
         gridBagC.gridx=4;
         gridBagC.gridy=0;
-        gridBagC.fill = GridBagConstraints.HORIZONTAL;
-
         gridBagC.gridwidth = 1;
         add(jlState,gridBagC);
 
@@ -159,7 +167,7 @@ PanelAllUsers(){
             add(label,gridBagC);
 
 
-            JComboBox  combo1=new JComboBox<String>();
+            JComboBox  combo1;
             combo1=new JComboBox<String>();
             combo1.setBounds(10,10,80,20);
             add(combo1);
@@ -228,6 +236,9 @@ PanelAllUsers(){
 
         }
 
+        updateUI();
+       validate();
+
 
     }
 
@@ -259,7 +270,14 @@ PanelAllUsers(){
 
                 }
 
-                showAllUsersAndSetUOP(lisAllUsers);
+
+                if(esPrimeraVezIngresa){
+                    esPrimeraVezIngresa=false;
+
+                    showAllUsersAndSetUOP(lisAllUsers);
+
+                }
+
 
 
 

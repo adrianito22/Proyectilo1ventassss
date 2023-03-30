@@ -145,6 +145,9 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
             if(recoverUserData(uid)){
 
+                System.out.println("llamos aquidatass ");
+
+
                 createChangePanelAdminPanel();
 
               //  System.out.println("se ejecuto este if ");
@@ -347,7 +350,7 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
         contentPane.removeAll();
         //   RegisterPanel newPanel=new RegisterPanel();
         // newPanel.jPanelCenter.setSize(100,100);
-        resizePanel();
+        resizeFrame();
 
 
         contentPane.add(newPanel.adminPanel);
@@ -366,39 +369,27 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
     public void createChangePanelAdminPanel() {
 
-        System.out.println("estamos ff ");
-
         AdminPanel newPanel=new AdminPanel();
-        System.out.println("aftter ");
-
-        // jPanel1.add(newPanel.jPanelCenter, BorderLayout.SOUTH);
-
-
-       // setSize(800,420);
-        //   setBackground(new java.awt.Color(41, 7, 65));
-       // contentPane.setSize(1000,1000);
-      //  newPanel.adminPanel.setSize(1000,1000);
-
+        setBackground(new java.awt.Color(41, 7, 65));
         contentPane.removeAll();
-        System.out.println("remove panel ");
-
-        //   RegisterPanel newPanel=new RegisterPanel();
-        // newPanel.jPanelCenter.setSize(100,100);
-
-        resizePanel();
+        resizeFrame();
+        //pack();
+       // setLocationRelativeTo(null);
+      //  setVisible(true);
 
         contentPane.add(newPanel.adminPanel);
-        System.out.println("new panel created");//for debugging purposes
-        validate();
-        setVisible(true);
 
+        System.out.println("new panel created");//for debugging purposes
+
+        validate();
+        newPanel.generapanelHere();
 
 
     }
 
 
 
-    public  void resizePanel(){
+    public  void resizeFrame(){
 
      //   setExtendedState(JFrame.MAXIMIZED_BOTH);
        // setUndecorated(true);
@@ -408,7 +399,6 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice[] gs = ge.getScreenDevices();
-
 
         int screenWidth=0;
         int screenHeight=0;
@@ -422,6 +412,11 @@ public class LoginPanelWhitFrameMain extends javax.swing.JFrame {
 
 
        setSize(screenWidth,screenHeight);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+
+
 
 
     }

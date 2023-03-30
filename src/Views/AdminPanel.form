@@ -53,10 +53,10 @@
           <grid id="7827" binding="jPnelMenuInicio" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
             <margin top="10" left="10" bottom="10" right="10"/>
             <constraints>
-              <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-14414271"/>
+              <background color="-12903840"/>
               <foreground color="-1"/>
             </properties>
             <border type="none"/>
@@ -71,7 +71,7 @@
                   <font name="Lato Semibold"/>
                   <foreground color="-1"/>
                   <horizontalAlignment value="0"/>
-                  <text value="INICIO"/>
+                  <text value="TODOS LOS USUARIOS"/>
                 </properties>
               </component>
             </children>
@@ -98,7 +98,7 @@
                   <enabled value="true"/>
                   <font name="Lato Semibold" style="0"/>
                   <foreground color="-1"/>
-                  <text value="CONTENEDORES"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -121,7 +121,7 @@
                   <enabled value="true"/>
                   <font name="Lato Semibold" style="0"/>
                   <foreground color="-1"/>
-                  <text value="CONTENEDORES EN ACOPIO"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -144,7 +144,7 @@
                   <enabled value="true"/>
                   <font name="Lato Semibold" style="1"/>
                   <foreground color="-1"/>
-                  <text value="CAMIONES Y CARRETAS"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -175,7 +175,7 @@
                 <properties>
                   <font name="Lato Semibold" style="1"/>
                   <foreground color="-1"/>
-                  <text value="PACKING LIST"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -197,7 +197,7 @@
                 <properties>
                   <font name="Lato Semibold" style="0"/>
                   <foreground color="-1"/>
-                  <text value="MUESTREO , RECHAZADOS"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
@@ -219,7 +219,7 @@
                 <properties>
                   <font name="Lato Semibold" style="0"/>
                   <foreground color="-1"/>
-                  <text value="CONTROL CALIDAD"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>

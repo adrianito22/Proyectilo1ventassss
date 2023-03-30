@@ -32,12 +32,10 @@ public class MainFrame{
 
                public void run() {
 
-                  LoginPanelWhitFrameMain panel=new LoginPanelWhitFrameMain();
+                LoginPanelWhitFrameMain panel=new LoginPanelWhitFrameMain();
                 panel.setSize(700,450);
                 dhdh(panel);
                 panel.setVisible(true);
-
-
 
 
 
