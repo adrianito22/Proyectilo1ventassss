@@ -4,6 +4,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 import utils.Common;
 
 import javax.swing.*;
+import java.io.InputStream;
 import java.net.URL;
 
 public class MainFrame{
@@ -14,7 +15,6 @@ public class MainFrame{
 
        FlatLightLaf.install();
 
-        Common.initFirebase();
 
 
         try {
@@ -33,9 +33,15 @@ public class MainFrame{
                public void run() {
 
                 LoginPanelWhitFrameMain panel=new LoginPanelWhitFrameMain();
+
+
+                Common.initFirebase(panel);
+
                 panel.setSize(700,450);
-                dhdh(panel);
-                panel.setVisible(true);
+               dhdh(panel);
+                panel. setVisible( true );
+
+              //  panel.setVisible(true);
 
 
 
@@ -55,6 +61,8 @@ public class MainFrame{
        // setIconImage(imageIcon.getImage());
        f. setTitle("Qsercon Admin");
        // Runnable r = new Runnable()
+
+
 
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact build-on-make="true" name="Qsercon_App:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Qsercon_App_jar</output-path>
+  <artifact build-on-make="true" name="Qsercon_App:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/Qsercon_App_jar2</output-path>
     <root id="root">
       <element id="archive" name="Qsercon_App.jar">
         <element id="module-output" name="Qsercon_App" />

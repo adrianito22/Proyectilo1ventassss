@@ -47,7 +47,7 @@ public class Menu extends javax.swing.JFrame {
             initComponents();
 
             status_request_lbl.setVisible(false);
-            initFirebase();
+           // initFirebase();
             //more details: https://firebase.google.com/docs/admin/setup?hl=en-us
         }
 
