@@ -148,11 +148,11 @@ public class AdminPanel  implements MouseListener {
        JPanel borderLayoutPanel=new JPanel(new BorderLayout());
        borderLayoutPanel.setBorder(new EmptyBorder(20, 10, 10, 10)); //le agregamos un border
 
-       PanelAllUsers panel = new PanelAllUsers();
-      // panel.setBackground(Color.BLUE);
+       PanelAllUsers panelContieneComponentes = new PanelAllUsers();
+      // panelContieneComponentes.setBackground(Color.BLUE);
       // borderLayoutPanel.setSize((int)sizePanelWidth/2,(int)sizePanelHeigth);
 
-       borderLayoutPanel.add(panel, BorderLayout.NORTH);
+       borderLayoutPanel.add(panelContieneComponentes, BorderLayout.NORTH);
 
        scrollPanel.add(borderLayoutPanel);
 
@@ -160,7 +160,7 @@ public class AdminPanel  implements MouseListener {
 
        jpanelContent.setLayout(null);
        jpanelContent.add(scrollPanel);
-      // jpanelContent.add(panel); //asi estaba
+      // jpanelContent.add(panelContieneComponentes); //asi estaba
 
 
 

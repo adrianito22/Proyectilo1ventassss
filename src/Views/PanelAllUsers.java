@@ -192,9 +192,6 @@ PanelAllUsers(){
 
                 Utils.setSelectedValue(combo1,"No definido");
 
-
-
-
             }
 
 
