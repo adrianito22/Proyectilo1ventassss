@@ -149,8 +149,7 @@ public class AdminPanel  implements MouseListener {
        borderLayoutPanel.setBorder(new EmptyBorder(0, 10, 0, 10)); //le agregamos un border estaab a en top
 
        PanelAllUsers panelContieneComponentes = new PanelAllUsers();
-      // panelContieneComponentes.setBackground(Color.BLUE);
-      // borderLayoutPanel.setSize((int)sizePanelWidth/2,(int)sizePanelHeigth);
+//      // borderLayoutPanel.setSize((int)sizePanelWidth/2,(int)sizePanelHeigth);
 
        borderLayoutPanel.add(panelContieneComponentes, BorderLayout.NORTH);
 
